@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topological Sort</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Priority of tasks</h1>
+    <ul>
+        {% for node in topo_sort %}
+        <li>{{ node }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('graph') }}">Back to Graph</a>
+</div>
+</body>
+</html>

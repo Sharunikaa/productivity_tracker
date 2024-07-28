@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shortest Path</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Shortest Path</h1>
+        <form method="post">
+            <label for="start">Start Node:</label>
+            <input type="text" id="start" name="start">
+            <label for="end">End Node:</label>
+            <input type="text" id="end" name="end">
+            <button type="submit">Find Shortest Path</button>
+        </form>
+        {% if path %}
+        <h2>Result</h2>
+        <p>Path: {{ path }}</p>
+        <p>Total Time: {{ total_weight }}</p>
+        {% endif %}
+        <a href="{{ url_for('graph') }}">Back to Graph</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Input</title>
+    <style>
+        body {
+            background: url('https://media.istockphoto.com/id/1458736323/video/financial-report-rising-bar-graph.jpg?s=640x640&k=20&c=E85pr2Y9FDOu84qtpZHL07SfVxL-ho3fCMBcLwR4q_M=') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 30px;
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Project Input</h2>
+        <form method="post" action="{{ url_for('project_input') }}">
+            <label for="project_name">Project Name:</label>
+            <input type="text" id="project_name" name="project_name"><br><br>
+            <label for="num_tasks">Number of Tasks:</label>
+            <input type="number" id="num_tasks" name="num_tasks"><br><br>
+            <div id="tasks"></div>
+            <button type="button" onclick="addTaskFields()">Add Task</button><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script>
+            function addTaskFields() {
+                var numTasks = document.getElementById("num_tasks").value;
+                var tasksDiv = document.getElementById("tasks");
+                tasksDiv.innerHTML = "";
+                for (var i = 1; i <= numTasks; i++) {
+                    tasksDiv.innerHTML +=
+                        "<h3>Task " + i + "</h3>" +
+                        "<label for='task_name_" + i + "'>Task Name:</label>" +
+                        "<input type='text' id='task_name_" + i + "' name='task_name_" + i + "'><br><br>" +
+                        "<label for='duration_" + i + "'>Duration (in minutes):</label>" +
+                        "<input type='number' id='duration_" + i + "' name='duration_" + i + "'><br><br>" +
+                        "<label for='dependencies_" + i + "'>Dependencies (comma-separated task numbers):</label>" +
+                        "<input type='text' id='dependencies_" + i + "' name='dependencies_" + i + "'><br><br>";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

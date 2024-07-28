@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background: url('https://media.istockphoto.com/id/1458736323/video/financial-report-rising-bar-graph.jpg?s=640x640&k=20&c=E85pr2Y9FDOu84qtpZHL07SfVxL-ho3fCMBcLwR4q_M=') ;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: rgba(239, 237, 237, 0.8);
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 100px; /* To bring the container down to the middle */
+        }
+
+        img.logo {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 80%;
+            padding: 12px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: rgba(88, 84, 84, 0.068);
+            color: black;
+            border: 2px solid #555555;
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        input[type=submit] {
+            background-color: rgba(88, 84, 84, 0.068);
+            color: black;
+            border: 2px solid #555555;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition-duration: 0.4s;
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #a09f9f;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Monoton', cursive;
+            font-size: 30px;
+            font-weight: normal;
+            color: rgb(29, 2, 2);
+            margin-left: 10px;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 2px solid #555555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="post" action="{{ url_for('login') }}">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

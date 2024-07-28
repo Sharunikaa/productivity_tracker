@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Productivity Report</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Productivity Report</h2>
+        <table>
+            <tr>
+                <th>Task No</th>
+                <th>Task Name</th>
+                <th>Planned Time</th>
+                <th>Actual Time</th>
+                <th>Productivity (%)</th>
+            </tr>
+            {% for task in report %}
+            <tr>
+                <td>{{ task['task_no'] }}</td>
+                <td>{{ task['task_name'] }}</td>
+                <td>{{ task['planned_time'] }}</td>
+                <td>{{ task['actual_time'] }}</td>
+                <td>{{ task['productivity'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>Overall Productivity: {{ overall_productivity }}%</p>
+        <p><a href="{{ url_for('graph') }}">Go Back to Graph</a></p>
+    </div>
+</body>
+</html>

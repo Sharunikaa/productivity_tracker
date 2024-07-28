@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Project Graph{% endblock %}
+{% block content %}
+<div class="container">
+    <style>
+        body {
+            background: url('https://media.istockphoto.com/id/1458736323/video/financial-report-rising-bar-graph.jpg?s=640x640&k=20&c=E85pr2Y9FDOu84qtpZHL07SfVxL-ho3fCMBcLwR4q_M=') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 30px;
+            width: 60%;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 60%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .link-container a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+
+    <div style="text-align: center;">
+        <h1>Productivity Tracker</h1>
+    </div>
+
+    <div class="link-container">
+        <a href="{{ url_for('shortest_path') }}">Shortest Path</a>
+        <a href="{{ url_for('productivity_report') }}">Productivity Report</a>
+        <a href="{{ url_for('topological_sort') }}">Pririties of tasks</a>
+        <a href="{{ url_for('critical_path') }}">Critical Path</a>
+    </div>
+
+    <hr>
+    <h2>Project Task Dependency Graph</h2>
+    <div style="text-align: center;">
+        <img src="data:image/png;base64,{{ graph_url }}" alt="Project Graph">
+    </div>
+    <br><br>
+
+    <form method="POST" action="{{ url_for('graph') }}">
+        <h3>Mark Task as Completed:</h3>
+        <label for="task_completed">Task Number:</label>
+        <input type="number" id="task_completed" name="task_completed" required><br>
+        <label for="actual_duration">Actual Duration (in minutes):</label>
+        <input type="number" id="actual_duration" name="actual_duration" required><br><br>
+        <button type="submit">Mark as Completed</button>
+    </form>
+    <hr>
+</div>
+{% endblock %}
