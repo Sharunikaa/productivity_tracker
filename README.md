@@ -1,11 +1,14 @@
-Effective project management requires precise coordination of tasks, accurate time tracking, 
-and robust productivity monitoring. The Project Tracker application addresses these needs by 
-offering a comprehensive web-based solution. Users can input project details and visualize task 
-dependencies through dynamic graphs. The application employs topological sorting to 
-determine the optimal order of task completion, ensuring efficient workflow management. 
-Additionally, it features shortest path analysis to identify the minimum time needed to complete 
-specific task sequences and critical path analysis to pinpoint tasks that could delay the project 
-if postponed. By tracking the actual time spent on tasks, the application generates detailed 
-productivity reports, providing insights into project performance. This tool enhances project 
-management efficiency through clear visualization, precise tracking, and detailed analysis, 
-facilitating successful project completion
+Project Tracker Application
+Effective project management requires precise coordination of tasks, accurate time tracking, and robust productivity monitoring. The Project Tracker application offers a comprehensive web-based solution to address these needs, empowering users to manage their projects efficiently.
+
+Key Features:-
+Dynamic Visualization of Tasks:Users can input project details and visualize task dependencies using interactive and dynamic graphs, enhancing clarity and organization.
+Optimal Task Completion Order:Employs topological sorting to determine the most efficient sequence for completing tasks, ensuring streamlined workflows.
+Shortest Path Analysis:Identify the minimum time required to complete specific task sequences, helping in effective time planning and allocation.
+Critical Path Analysis:Pinpoints tasks that could potentially delay the project if postponed, enabling proactive management of high-priority tasks.
+Time Tracking and Productivity Reports:Tracks the actual time spent on tasks and generates detailed productivity reports, offering valuable insights into project performance and areas for improvement.
+
+Benefits:-
+Enhanced project management efficiency through precise task tracking and dependency visualization.
+Improved time management with advanced scheduling tools and analysis.
+Clear insights into performance metrics, enabling data-driven decision-making for successful project completion.
